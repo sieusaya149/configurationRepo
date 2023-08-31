@@ -1,9 +1,11 @@
 const fs = require('fs');
+const path = require('path');
+const configFile = path.join(__dirname, '..', 'configs', 'notificationConfigs.json');
 
 class ConfigParser {
   constructor() {
     this.config = null;
-    this.configFilePath = '../configs/notifcationConfigs.json'; // Adjust the path as needed
+    this.configFilePath = configFile; // Adjust the path as needed
   }
 
   static getInstance() {
