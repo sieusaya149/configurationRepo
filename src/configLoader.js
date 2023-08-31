@@ -2,17 +2,17 @@ const fs = require('fs');
 const path = require('path');
 const configFile = path.join(__dirname, '..', 'configs', 'notificationConfigs.json');
 
-class ConfigParser {
+class ConfigLoader {
   constructor() {
     this.config = null;
     this.configFilePath = configFile; // Adjust the path as needed
   }
 
   static getInstance() {
-    if (!ConfigParser.instance) {
-      ConfigParser.instance = new ConfigParser();
+    if (!ConfigLoader.instance) {
+      ConfigLoader.instance = new ConfigParser();
     }
-    return ConfigParser.instance;
+    return ConfigLoader.instance;
   }
 
   loadConfig() {
@@ -28,10 +28,10 @@ class ConfigParser {
     if (!this.config) {
       this.loadConfig();
     }
-    console.log("PARSE CONFIG: ")
+    console.log("LOADED SHARING CONFIG: ")
     console.log(this.config)
     return this.config;
   }
 }
 
-module.exports = ConfigParser;
+module.exports = ConfigLoader;

@@ -1,5 +1,5 @@
-const ConfigParser = require("../src/configParser")
+const ConfigLoader = require("../src/configLoader")
 
-const configuration = ConfigParser.getInstance()
+const configuration = ConfigLoader.getInstance()
 
 configuration.getConfig()
