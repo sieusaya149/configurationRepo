@@ -10,7 +10,7 @@ class ConfigLoader {
 
   static getInstance() {
     if (!ConfigLoader.instance) {
-      ConfigLoader.instance = new ConfigParser();
+      ConfigLoader.instance = new ConfigLoader();
     }
     return ConfigLoader.instance;
   }
